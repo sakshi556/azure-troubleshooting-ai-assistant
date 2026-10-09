@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Azure Troubleshooting Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', path='/style.css') }}"
+    >
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Azure Troubleshooting Assistant</h1>
+
+        <p class="subtitle">
+            Powered by LangChain + Ollama + llama3.2
+        </p>
+
+        <label for="question">
+            Describe your Azure issue
+        </label>
+
+        <textarea
+            id="question"
+            placeholder="Example: My Azure Function App gets 403 while accessing Storage..."
+        ></textarea>
+
+        <button id="analyzeButton" onclick="analyzeIssue()">
+            Analyze Issue
+        </button>
+
+        <p id="loading"></p>
+
+        <div id="result" class="result hidden">
+
+            <h2>AI Analysis</h2>
+
+            <pre id="answer"></pre>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', path='/app.js') }}"></script>
+
+</body>
+
+</html>

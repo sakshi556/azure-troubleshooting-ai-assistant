@@ -1,0 +1,22 @@
+Azure Functions Troubleshooting Notes
+
+When an Azure Function App cannot access a Storage Account,
+investigate the error type before determining the cause.
+
+For networking investigations, verify whether the Storage Account
+uses public network access or a private endpoint.
+
+If a private endpoint is being used, verify DNS resolution from
+the Function App environment.
+
+Verify that the Storage Account hostname resolves to the expected
+private IP address.
+
+Review Function App networking configuration and VNet integration.
+
+For authorization failures, verify the authentication method being
+used by the application and confirm that the required permissions
+are configured.
+
+Review application logs and Storage Account diagnostic information
+before concluding the root cause.
